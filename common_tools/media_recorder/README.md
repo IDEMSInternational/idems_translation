@@ -2,6 +2,14 @@
 
 Translate a JSON file to be uploaded to the Media Recorder. 
 
+Set working directory to common_tools\media_recorder:
+```
+cd common_tools
+cd media_recorder
+```
+Create output subfolder in media_recorder 
+
+Run main.py script:
 ```
 python main.py [dictionary] <input_file> [output_file]
 ```
