@@ -23,8 +23,8 @@ function po_to_json(poFile, _) {
     let json = [];
     for (const item of po.items) {
         let message = {
-            SourceText: item.msgid,
-            text: item.msgstr[0],
+            SourceText: clean(item.msgid),
+            text: clean(item.msgstr[0]),
         };
         let note = [];
         for (const comment of item.extractedComments) {
@@ -43,7 +43,12 @@ function po_to_json(poFile, _) {
     return JSON.stringify(json, null, 2);
 }
 
+function clean(s) {
+    return s.replace(/\\r/g, "\r");
+}
+
 module.exports = {
+    clean,
     json_to_po,
     po_to_json
 };
