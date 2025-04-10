@@ -7,7 +7,6 @@
 
 const utility = require('./translation_functions.js');
 const fs = require('fs'); 
-const reader = require('xlsx')
 
 // Code for running local tests on function - leave in place
 //let filePath = "C:/Users/edmun/Google Drive - EEM Engineering Ltd/Translation Checking/SA 13.12.21/7 - PLH_with_afr_sot_tsn_xho_zul.json"

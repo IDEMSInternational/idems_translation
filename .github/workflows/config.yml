@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Run Python tests
         run: python -m unittest app.scripts.tests
@@ -23,18 +23,23 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.17.6]
+        node-version:
+          - lts/jod
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: cd ./chatbot/ && npm ci
+        run: |
+          cd chatbot
+          npm ci
 
       - name: Run Node.js tests
-        run: cd ./chatbot/ && npm test
+        run: |
+          cd chatbot
+          npm test
