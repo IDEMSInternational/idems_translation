@@ -1,6 +1,6 @@
 {
   "name": "@idems/idems_translation_common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Common translation tools",
   "main": "index.js",
   "repository": {
